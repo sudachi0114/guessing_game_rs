@@ -1,7 +1,13 @@
+extern crate rand;
+
 use std::io;
+use rand::Rng;
 
 fn main() {
     println!("Guess the number!");
+
+	let secret_number = rand::thread_rng().gen_range(1, 101);
+	println!("[info] The secret_number is {}", secret_number);
 
 	println!("Please input your guess.");
 
@@ -11,6 +17,5 @@ fn main() {
 		.expect("Failed to read line");  // 入力の読み込みに失敗
 
 	println!("You guessed: {}", guess);
+
 }
-
-
